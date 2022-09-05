@@ -4,5 +4,5 @@ class Entity < ApplicationRecord
                      format: { with: /\A\d+(?:\.\d{0,2})?\z/ }
 
   belongs_to :user, class_name: 'User', optional: true
-  # has_many :groups, dependent: :destroy
+  has_many :groups, dependent: :destroy
 end
