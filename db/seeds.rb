@@ -1,20 +1,39 @@
-# # This file should contain all the record creation needed to seed the database with its default values.
-# # The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-# #
-# # Examples:
-# #
-# #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
-# #   Character.create(name: "Luke", movie: movies.first)
+# # # # This file should contain all the record creation needed to seed the database with its default values.
+# # # # The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
+# # # #
+# # # # Examples:
+# # # #
+# # # #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
+# # # #   Character.create(name: "Luke", movie: movies.first)
 
-Entity.create(name: "Bread", amount: 1.5, user_id: 1)
-Entity.create(name: "Milk", amount: 1, user_id: 1)
-Entity.create(name: "Eggs", amount: 12, user_id: 1)
-Entity.create(name: "Butter", amount: 0.5, user_id: 1)
-Entity.create(name: "Cheese", amount: 1, user_id: 1)
-Entity.create(name: "Chicken", amount: 1, user_id: 1)
-Entity.create(name: "Beef", amount: 1, user_id: 1)
+Entity.create(name: "Hamburger", amount: 5, user_id: 1)
+Entity.create(name: "Pizza", amount: 10, user_id: 1)
+Entity.create(name: "Milk-shake", amount: 8, user_id: 1)
+Entity.create(name: "Chicken Nuggets", amount: 10, user_id: 1)
+Entity.create(name: "Chocolatey", amount: 5, user_id: 1)
+Entity.create(name: "Hotdog", amount: 5, user_id: 1)
+Entity.create(name: "ice-cream", amount: 2.5, user_id: 1)
 
-Group.create(name: "Bakery", icon: "bread-slice", user_id: 1)
-Group.create(name: "Dairy", icon: "cheese", user_id: 1)
-Group.create(name: "Meatery", icon: "hamburger", user_id: 1)
+Group.create(name: "KFC", icon: "bread-slice", user_id: 1)
+Group.create(name: "Dominos Pizza", icon: "cheese", user_id: 1)
+Group.create(name: "StarBucks", icon: "hamburger", user_id: 1)
+Group.create(name: "Bradbury", icon: "hotdog", user_id: 1)
+Group.create(name: "McDonalds", icon: "ice-cream", user_id: 1)
+
+EntityGroup.create(entity_id: 1, group_id: 1)
+EntityGroup.create(entity_id: 1, group_id: 5)
+EntityGroup.create(entity_id: 2, group_id: 2)
+EntityGroup.create(entity_id: 2, group_id: 5)
+EntityGroup.create(entity_id: 3, group_id: 1)
+EntityGroup.create(entity_id: 3, group_id: 3)
+EntityGroup.create(entity_id: 4, group_id: 1)
+EntityGroup.create(entity_id: 4, group_id: 5)
+EntityGroup.create(entity_id: 5, group_id: 3)
+EntityGroup.create(entity_id: 5, group_id: 4)
+EntityGroup.create(entity_id: 6, group_id: 1)
+EntityGroup.create(entity_id: 6, group_id: 5)
+EntityGroup.create(entity_id: 7, group_id: 1)
+EntityGroup.create(entity_id: 7, group_id: 3)
+
+
 
