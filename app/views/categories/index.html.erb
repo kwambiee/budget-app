@@ -1,0 +1,18 @@
+<div>
+    <h1>Categories Page </h1>
+    <div>
+        <img src="http://www.google.com/images/srpr/logo3w.png" />
+        <% @results.each do |key, value| %>
+            <%= link_to category(value["id"]) do %>
+                <div>
+                    <h1> <%= key %> </h1>
+                    <h2> <%= value["amount"] %> </h2>
+                    <img src="<%= value["icon"] %>" />
+                </div>
+            <% end %>
+        <% end %>
+    </div>
+</div>
+<div>
+    <%= link_to 'Add category', new_category_path %>
+</div>
