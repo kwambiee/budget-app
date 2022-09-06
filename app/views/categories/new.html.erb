@@ -1,6 +1,6 @@
 <div class="container">
 <h2 class="text-center pt-4">Add new Category</h2>
-    <%= form_with model: @category, url: categories_path, method: :post do |form| %>
+    <%= form_with model: @category, url: categories_path, method: :post, data: { turbo: false } do |form| %>
         <div class="form-group">
             <%= form.label :name %>
             <%= form.text_field :name, class: 'form-control' %>
@@ -14,3 +14,5 @@
         </div>
     <% end %>
 </div>
+<%= link_to 'Back to Categories', categories_path %>
+

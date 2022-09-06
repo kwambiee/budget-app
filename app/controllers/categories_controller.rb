@@ -1,6 +1,11 @@
 class CategoriesController < ApplicationController
   def index
-    @categories = CategoryBudget.includes(:budget, :category).pluck('categories.name', 'categories.icon', 'budgets.amount','categories.id')
+    all_categories
+  end
+
+
+  def all_categories
+        @categories = CategoryBudget.includes(:budget, :category).pluck('categories.name', 'categories.icon', 'budgets.amount','categories.id')
 
     @results = {}
 
@@ -12,11 +17,12 @@ class CategoriesController < ApplicationController
         @results[category[0]]={'icon' => category[1], 'amount' => category[2], 'id' => category[3]}
       end
     end
+
   end
 
   def show
     @category = Category.find(params[:id])
-    @budgets = CategoryBudget.includes(:category, :budget).where(category_id:@category).pluck('budgets.name','budgets.amount', 'budgets.created_at' )
+    @budgets = CategoryBudget.includes(:category, :budget).where(category_id:@category).order('budgets.created_at DESC').pluck('budgets.name','budgets.amount', 'budgets.created_at' )
   end
 
   def new
@@ -30,10 +36,10 @@ class CategoriesController < ApplicationController
       format.html do
         if @category.save
           flash[:success] = 'Category was successfully created.'
-          redirect_to categories_path
+          redirect_to '/categories'
         else
           flash.now[:danger] = 'Category was not created.'
-          render :new, locals: { category: @category }
+          render :new
         end
       end
     end
