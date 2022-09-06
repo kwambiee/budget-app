@@ -1,13 +1,17 @@
 class GroupsController < ApplicationController
   def index
-    categories = EntityGroup.joins(:entity, :group).pluck('groups.name', 'groups.icon', 'entities.amount')
-    categories = categories.group_by { |name| [name[0], name[1]] }.transform_values do |value|
+    categories = EntityGroup.joins(:entity, :group).pluck('groups.name', 'groups.icon', 'entities.amount', 'groups.id')
+    category_id = EntityGroup.joins(:entity, :group).pluck('groups.id').uniq.sort
+
+    categories = categories.group_by { |name| [name[0], name[1], name[3]] }.transform_values do |value|
       value.map do |val|
         val[2]
       end.sum
     end
     @category = categories.reduce([]) do |category, (cat_name, cat_amount)|
-      category << { name: cat_name[0], icon: cat_name[1], amount: cat_amount }
+        category_id.each do |id|
+            category << { name: cat_name[0], icon: cat_name[1], amount: cat_amount}
+        end
     end
   end
 

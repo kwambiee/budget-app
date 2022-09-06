@@ -1,0 +1,14 @@
+<h1> Transactions page </h1>
+<div>
+    <% @entities.each do |entity| %>
+        <div>
+            <h1> <%= entity[0] %> </h1>
+            <h2> <%= entity[1] %> </h2>
+        </div>
+        <h2> <%= entity[2] %> </h2>
+    <% end %>
+</div>
+<div>
+    <%= link_to 'Add transaction' %>
+</div>
+</div>
