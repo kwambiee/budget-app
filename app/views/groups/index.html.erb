@@ -1,13 +1,14 @@
 <div>
     <h1>Categories Page </h1>
     <div>
-        <img src="http://www.google.com/images/srpr/logo3w.png" />
-        <% @category.each do |category| %>
-            <div>
-                <h1> <%= category[:name] %> </h1>
-                <h2> <%= category[:amount] %> </h2>
-                <img src="<%= category[:icon] %>" />
-            </div>
+        <% @category.each_with_index do |category,id| %>
+            <%= link_to group_entities_path(id) do %>
+                <div>
+                    <h1> <%= category[:name] %> </h1>
+                    <h2> <%= category[:amount] %> </h2>
+                    <img src="<%= category[:icon] %>" />
+                </div>
+            <% end %>
         <% end %>
     </div>
 </div>
