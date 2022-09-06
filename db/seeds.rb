@@ -1,18 +1,18 @@
-# # # This file should contain all the record creation needed to seed the database with its default values.
-# # # The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-# # #
-# # # Examples:
-# # #
-# # #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
-# # #   Character.create(name: "Luke", movie: movies.first)
+# # # # This file should contain all the record creation needed to seed the database with its default values.
+# # # # The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
+# # # #
+# # # # Examples:
+# # # #
+# # # #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
+# # # #   Character.create(name: "Luke", movie: movies.first)
 
-Entity.create(name: "Hamburger", amount: 1.50, user_id: 1)
-Entity.create(name: "Pizza", amount: 2.00, user_id: 1)
-Entity.create(name: "Milk-shake", amount: 2.00, user_id: 1)
-Entity.create(name: "Chicken Nuggets", amount: 1.00, user_id: 1)
-Entity.create(name: "Chocolatey", amount: 3.00, user_id: 1)
-Entity.create(name: "Hotdog", amount: 2.50, user_id: 1)
-Entity.create(name: "ice-cream", amount: 3.00, user_id: 1)
+Entity.create(name: "Hamburger", amount: 5, user_id: 1)
+Entity.create(name: "Pizza", amount: 10, user_id: 1)
+Entity.create(name: "Milk-shake", amount: 8, user_id: 1)
+Entity.create(name: "Chicken Nuggets", amount: 10, user_id: 1)
+Entity.create(name: "Chocolatey", amount: 5, user_id: 1)
+Entity.create(name: "Hotdog", amount: 5, user_id: 1)
+Entity.create(name: "ice-cream", amount: 2.5, user_id: 1)
 
 Group.create(name: "KFC", icon: "bread-slice", user_id: 1)
 Group.create(name: "Dominos Pizza", icon: "cheese", user_id: 1)

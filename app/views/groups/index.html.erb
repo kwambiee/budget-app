@@ -1,1 +1,16 @@
-<h1>Hi there</h1>
+<div>
+    <h1>Categories Page </h1>
+    <div>
+        <img src="http://www.google.com/images/srpr/logo3w.png" />
+        <% @category.each do |category| %>
+            <div>
+                <h1> <%= category[:name] %> </h1>
+                <h2> <%= category[:amount] %> </h2>
+                <img src="<%= category[:icon] %>" />
+            </div>
+        <% end %>
+    </div>
+</div>
+<div>
+    <%= link_to 'Add category', new_group_path %>
+</div>
