@@ -21,8 +21,8 @@ class CategoriesController < ApplicationController
   end
 
   def show
-    @category = Category.find(params[:id])
-    @budgets = CategoryBudget.includes(:category, :budget).where(category_id:@category).order('budgets.created_at DESC').pluck('budgets.name','budgets.amount', 'budgets.created_at' )
+    # @category = Category.find(params[:id])
+    # @budgets = CategoryBudget.includes(:category, :budget).where(category_id:@category).order('budgets.created_at DESC').pluck('budgets.name','budgets.amount', 'budgets.created_at' )
   end
 
   def new

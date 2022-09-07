@@ -1,35 +1,31 @@
 class BudgetsController < ApplicationController
     def index
         @category = Category.find(params[:category_id])
-        @budgets = CategoryBudget.includes(:category, :budget).where(category_id:@category).pluck('budgets.name','budgets.amount', 'budgets.created_at' )
-
+        @budgets = CategoryBudget.includes(:category, :budget).where(category: @category).order('budgets.created_at DESC').pluck('budgets.name','budgets.amount', 'budgets.created_at' )
     end
 
     def new
         @budget = Budget.new
-        @categories = Category.all.pluck(:name, :id)
+        @categories = Category.all
     end
 
     def create
-        @budget = current_user.budgets.build(budget_params)
-        @category = Category.find(params[:category_id])
-        @category_budget = CategoryBudget.new(category_id: @category.id, budget_id: @budget.id)
-        respond_to do |format|
-            format.html do
-                if @budget.save && @category_budget.save
-                    flash[:success] = 'Budget was successfully created.'
-                    redirect_to '/categories'
-                else
-                    flash.now[:danger] = 'Budget was not created.'
-                    render :new
-                end
-            end
+        @categories = current_user.categories
+        params = budget_params
+        @budget = Budget.new(name: params[:name], amount: params[:amount], user: current_user)
+
+        if @budget.save
+            @category_budget = CategoryBudget.new(category_id: params[:category_id], budget_id: @budget.id)
+            redirect_to category_budgets_path(params[:category_id]), notice: 'Budget was successfully created.'
+        else
+            flash[:danger] = 'Budget was not created.'
+            render :new, status: :unprocessable_entity
         end
     end
 
     private
 
     def budget_params
-        params.require(:budget).permit(:name, :amount)
+        params.permit(:name, :amount, :category_id)
     end
 end

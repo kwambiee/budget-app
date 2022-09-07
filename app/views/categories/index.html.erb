@@ -3,7 +3,7 @@
     <div>
         <img src="http://www.google.com/images/srpr/logo3w.png" />
         <% @results.each do |key, value| %>
-            <%= link_to category_path(value["id"]) do %>
+            <%= link_to category_budgets_path(value["id"]) do %>
                 <div>
                     <h1> <%= key %> </h1>
                     <h2> <%= value["amount"] %> </h2>
