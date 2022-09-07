@@ -1,5 +1,6 @@
 class BudgetsController < ApplicationController
     def index
+        category_id = params[:category_id]
         @category = Category.find(params[:category_id])
         @budgets = CategoryBudget.includes(:category, :budget).where(category: @category).order('budgets.created_at DESC').pluck('budgets.name','budgets.amount', 'budgets.created_at' )
     end
