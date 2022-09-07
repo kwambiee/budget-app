@@ -3,21 +3,19 @@ class CategoriesController < ApplicationController
     all_categories
   end
 
-
   def all_categories
-        @categories = CategoryBudget.includes(:budget, :category).pluck('categories.name', 'categories.icon', 'budgets.amount','categories.id')
-
+    @categories = CategoryBudget.includes(:budget, :category).pluck('categories.name', 'categories.icon',
+                                                                    'budgets.amount', 'categories.id')
     @results = {}
 
     @categories.each do |category|
       if @results[category[0]]
-        amount = @results[category[0]]["amount"] + category[2]
-        @results[category[0]]={'icon' => category[1], 'amount' => amount, 'id' => category[3]}
+        amount = @results[category[0]]['amount'] + category[2]
+        @results[category[0]] = { 'icon' => category[1], 'amount' => amount, 'id' => category[3] }
       else
-        @results[category[0]]={'icon' => category[1], 'amount' => category[2], 'id' => category[3]}
+        @results[category[0]] = { 'icon' => category[1], 'amount' => category[2], 'id' => category[3] }
       end
     end
-
   end
 
   def show
@@ -51,4 +49,3 @@ class CategoriesController < ApplicationController
     params.require(:category).permit(:name, :icon)
   end
 end
-
