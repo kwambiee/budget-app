@@ -1,22 +1,22 @@
 require 'rails_helper'
 
-RSpec.describe Group, type: :model do
-  subject { Group.new(name: 'Manchester', icon: 'martinez.png') }
+RSpec.describe Budget, type: :model do
+  subject { Budget.new(name: 'Mid-fielder player', amount: 2.00) }
 
   before { subject.save }
-  after { Group.destroy_all }
+  after { Budget.destroy_all }
 
   it 'is valid with valid attributes' do
     expect(subject).to be_valid
   end
 
   it 'is not valid without a name' do
-    subject.name = 'Manchester'
+    subject.name = 'Mid-fielder player'
     expect(subject).to be_valid
   end
 
-  it 'is not valid without an icon' do
-    subject.icon = 'martinez.png'
+  it 'is not valid without an amount' do
+    subject.amount = 2.00
     expect(subject).to be_valid
   end
 end
