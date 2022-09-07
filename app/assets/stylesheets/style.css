@@ -46,3 +46,18 @@ button a {
     margin-bottom: 1rem;
     background-color: #F5F5F5;
 }
+.content{
+    padding: 1rem 0;
+}
+.content h6{
+    font-size: 12px;
+    padding-left: 5rem;
+}
+.content h1{
+    margin-left: -50%;
+}
+.content h2{
+    padding-right: 2rem;
+}.heading{
+    padding-right: 3rem;
+}
