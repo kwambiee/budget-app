@@ -3,12 +3,10 @@ class CategoriesController < ApplicationController
     @categories = Category.all.where(user_id: current_user.id).order(created_at: :desc)
   end
 
-
   def show
     @category = Category.find(params[:id])
     @budgets = @category.budgets
     @total_amount = @budgets.sum(&:amount)
-
   end
 
   def new

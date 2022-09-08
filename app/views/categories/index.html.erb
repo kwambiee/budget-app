@@ -10,7 +10,7 @@
     <div class="container mx-auto categories">
         <div class="row">
             <% @categories.each do |category| %>
-                <%= link_to category_path(category.id) do %>
+                <%= link_to category_path(category.id), class:"link" do %>
 
                     <div class = "col d-flex border my-2 food text-dark justify-content-between">
                         <img src="https://previews.123rf.com/images/olgastrelnikova/olgastrelnikova1901/olgastrelnikova190100001/115903194-food-icon-with-smile-label-for-food-company-grocery-store-icon-vector-illustration-with-smiling-mout.jpg" />
