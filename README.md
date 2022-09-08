@@ -1,6 +1,6 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# BudgetOnRails
+# Budget Checker
 
 > This is an educational project is about building a mobile web application where you can manage your budget: you have a list of transactions associated with a category, so that you can see how much money you spent and on what. The Ruby on Rails application that allows the user to:
 - [x] register and log in, so that the data is private to them.
@@ -32,7 +32,7 @@ The result should look similar to the following data model:
 
 ## Project Documentation 📄
 
-- [x] Here is the presentation video [link]()👈
+- [x] Here is the presentation video [link](https://www.loom.com/share/ea852dde8d224c09a08a08b954d90277)👈
 - [x] Here is the deployed app in [Heroku](https://kwambiee-budget.herokuapp.com/)👈
 
 ## Built With 🛠️
