@@ -1,6 +1,6 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# Budget Checker
+# BudgetOnRails
 
 > This is an educational project is about building a mobile web application where you can manage your budget: you have a list of transactions associated with a category, so that you can see how much money you spent and on what. The Ruby on Rails application that allows the user to:
 - [x] register and log in, so that the data is private to them.
@@ -32,7 +32,7 @@ The result should look similar to the following data model:
 
 ## Project Documentation 📄
 
-- [x] Here is the presentation video [link](https://www.loom.com/share/ea852dde8d224c09a08a08b954d90277)👈
+- [x] Here is the presentation video [link]()👈
 - [x] Here is the deployed app in [Heroku](https://kwambiee-budget.herokuapp.com/)👈
 
 ## Built With 🛠️
@@ -99,11 +99,11 @@ $ rspec ./spec/#{filename}_spec.rb
 
 👤 **Joy Kwamboka** <img src="https://emojis.slackmojis.com/emojis/images/1531849430/4246/blob-sunglasses.gif?1531849430" width="20"/>
 
-- LinkedIn: [![LinkedIn Badge](https://img.shields.io/badge/-mavericks--db-white?logo=LinkedIn&logoColor=0A66C2&style=plastic)](https://www.linkedin.com/in/joy-kwamboka)
+- LinkedIn: [![LinkedIn Badge](https://img.shields.io/badge/-kwambiee-white?logo=LinkedIn&logoColor=0A66C2&style=plastic)](https://www.linkedin.com/in/joy-kwamboka)
 
-- GitHub: [![GitHub Badge](https://img.shields.io/badge/-mavericks--db-white?logo=GitHub&logoColor=181717&style=plastic)](https://github.com/kwambiee)
+- GitHub: [![GitHub Badge](https://img.shields.io/badge/-kwambiee-white?logo=GitHub&logoColor=181717&style=plastic)](https://github.com/kwambiee)
 
-- Twitter: [![Twitter Badge](https://img.shields.io/badge/-mavericks__db-white?logo=Twitter&logoColor=1DA1F2&style=plastic)](https://twitter.com/kwambiee)
+- Twitter: [![Twitter Badge](https://img.shields.io/badge/-kwambiee-white?logo=Twitter&logoColor=1DA1F2&style=plastic)](https://twitter.com/kwambiee)
 
 ## 🤝 Contributing
 
