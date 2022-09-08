@@ -3,5 +3,6 @@ class Category < ApplicationRecord
   validates :icon, presence: true
 
   belongs_to :user, class_name: 'User', optional: true
-  has_many :budgets, through: :category_budgets, dependent: :destroy
+  has_many :category_budgets, dependent: :destroy
+  has_many :budgets, through: :category_budgets
 end

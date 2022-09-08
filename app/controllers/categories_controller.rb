@@ -1,26 +1,14 @@
 class CategoriesController < ApplicationController
   def index
-    all_categories
+    @categories = Category.all.where(user_id: current_user.id).order(created_at: :desc)
   end
 
-  def all_categories
-    @categories = CategoryBudget.includes(:budget, :category).pluck('categories.name', 'categories.icon',
-                                                                    'budgets.amount', 'categories.id')
-    @results = {}
-
-    @categories.each do |category|
-      if @results[category[0]]
-        amount = @results[category[0]]['amount'] + category[2]
-        @results[category[0]] = { 'icon' => category[1], 'amount' => amount, 'id' => category[3] }
-      else
-        @results[category[0]] = { 'icon' => category[1], 'amount' => category[2], 'id' => category[3] }
-      end
-    end
-  end
 
   def show
-    # @category = Category.find(params[:id])
-    # @budgets = CategoryBudget.includes(:category, :budget).where(category_id:@category).order('budgets.created_at DESC').pluck('budgets.name','budgets.amount', 'budgets.created_at' )
+    @category = Category.find(params[:id])
+    @budgets = @category.budgets
+    @total_amount = @budgets.sum(&:amount)
+
   end
 
   def new
@@ -33,11 +21,11 @@ class CategoriesController < ApplicationController
     respond_to do |format|
       format.html do
         if @category.save
-          flash[:success] = 'Category was successfully created.'
-          redirect_to '/categories'
+          redirect_to '/categories', notice: 'Category was successfully created.'
+
         else
-          flash.now[:danger] = 'Category was not created.'
-          render :new
+          flash[:danger] = 'Category was not created.'
+          render :new, status: :unprocessable_entity
         end
       end
     end
