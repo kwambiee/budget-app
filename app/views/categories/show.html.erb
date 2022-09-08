@@ -1,0 +1,32 @@
+<nav class="navbar" >
+    <div class="container-fluid d-flex text-light py-3">
+        <h2><%= link_to '🏠', categories_path %></h2>
+        <h1 class="heading"> Your Expenditure 💶 </h1>
+    </div>
+</nav>
+<div class="container mx-auto categories">
+    <div class="row">
+        <div class="col">
+                <h2 class = "pt-3 fw-bold text-center"> Total Expenditure:  $<%= @total_amount %> </h2>
+        </div>
+    </div>
+    <div class = 'row'>
+        <div class="col d-flex flex-column">
+            <% @budgets.each_with_index do |budget, index| %>
+                <div class = "d-flex border my-2 food content text-dark justify-content-between">
+                    <h6 class="pt-5"> <%= budget.created_at.strftime("%m %^b %Y") %> </h4>
+                    <h1 class="pt-2"> <%= budget.name %> </h1>
+                    <h2 class="pt-1"> $ <%= budget.amount %> </h2>
+
+                </div>
+            <% end %>
+        </div>
+
+    </div>
+    <div class="text-center button">
+        <button type="button" class="btn btn-primary text-light">
+            <%= link_to 'Add transaction', new_budget_path(@category.id) %>
+        </button>
+    </div>
+
+</div>

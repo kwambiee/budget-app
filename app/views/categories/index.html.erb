@@ -1,0 +1,28 @@
+
+<nav class="navbar navbar-dark">
+  <div class="container-fluid text-light">
+        <button class="navbar-toggler" type="button">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+        <h1 class="title"> Welcome!<br><span class="fs-5">Track your Expenditure</h1>
+    </div>
+</nav>
+    <div class="container mx-auto categories">
+        <div class="row">
+            <% @categories.each do |category| %>
+                <%= link_to category_path(category.id), class:"link" do %>
+
+                    <div class = "col d-flex border my-2 food text-dark justify-content-between">
+                        <img src="https://previews.123rf.com/images/olgastrelnikova/olgastrelnikova1901/olgastrelnikova190100001/115903194-food-icon-with-smile-label-for-food-company-grocery-store-icon-vector-illustration-with-smiling-mout.jpg" />
+                        <h1 class = "pt-3 animate-text"> <%= category.name %> </h1>
+                        <h2 class = "pt-3 fw-bold animate-text"> $<%= category.budgets.sum(:amount) %> </h2>
+                    </div>
+                <% end %>
+            <% end %>
+        </div>
+    </div>
+<div class="text-center button">
+    <button type="button" class="btn btn-primary text-light">
+        <%= link_to 'Add category', new_category_path %>
+    </button>
+</div>
