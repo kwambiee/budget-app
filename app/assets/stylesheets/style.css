@@ -61,10 +61,11 @@ button a {
   padding: 1rem 0;
   animation: spin 1s linear 1;
 }
+
 @keyframes spin {
-    100% {
-        transform: rotate(360deg);
-    }
+  100% {
+    transform: rotate(180deg);
+  }
 }
 
 .content h6 {
@@ -84,18 +85,17 @@ button a {
   padding-right: 3rem;
 }
 
-.animate-text{
-    animation: mymove 3s ease;
-    width:100%;
+.animate-text {
+  animation: mymove 3s ease;
+  width: 100%;
 }
+
 @keyframes mymove {
-    from {
-            margin-left: 100%;
-        }
+  from {
+    margin-left: 100%;
+  }
 
-        to {
-            margin-left: 0;
-        }
-    }
-
-
+  to {
+    margin-left: 0;
+  }
+}

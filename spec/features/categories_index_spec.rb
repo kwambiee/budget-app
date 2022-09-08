@@ -16,14 +16,13 @@ RSpec.feature 'Category Page' do
       visit categories_path
     end
 
-
     scenario 'shows each category' do
-        expect(page).to have_content('Fruity')
-        expect(page).to have_content('Add category')
+      expect(page).to have_content('Fruity')
+      expect(page).to have_content('Add category')
     end
     scenario 'Shows category title' do
-        expect(page).to have_content('Welcome!')
-        expect(page).to have_content('Track your Expenditure')
+      expect(page).to have_content('Welcome!')
+      expect(page).to have_content('Track your Expenditure')
     end
   end
 end
