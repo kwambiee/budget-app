@@ -12,11 +12,11 @@
     </div>
     <div class = 'row'>
         <div class="col d-flex flex-column">
-            <% @budgets.each do |budget| %>
+            <% @budgets.each_with_index do |budget, index| %>
                 <div class = "d-flex border my-2 food content text-dark justify-content-between">
-                    <h6 class="pt-5"> <%= budget[2].strftime("%m %^b %Y") %> </h4>
-                    <h1 class="pt-2"> <%= budget[0] %> </h1>
-                    <h2 class="pt-1"> $ <%= budget[1] %> </h2>
+                    <h6 class="pt-5"> <%= budget.created_at.strftime("%m %^b %Y") %> </h4>
+                    <h1 class="pt-2"> <%= budget.name %> </h1>
+                    <h2 class="pt-1"> $ <%= budget.amount %> </h2>
 
                 </div>
             <% end %>

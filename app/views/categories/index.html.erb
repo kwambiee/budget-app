@@ -9,12 +9,13 @@
 </nav>
     <div class="container mx-auto categories">
         <div class="row">
-            <% @results.each do |key, value| %>
-                <%= link_to category_budgets_path(value["id"]), class:"link" do %>
+            <% @categories.each do |category| %>
+                <%= link_to category_path(category.id), class:"link" do %>
+
                     <div class = "col d-flex border my-2 food text-dark justify-content-between">
                         <img src="https://previews.123rf.com/images/olgastrelnikova/olgastrelnikova1901/olgastrelnikova190100001/115903194-food-icon-with-smile-label-for-food-company-grocery-store-icon-vector-illustration-with-smiling-mout.jpg" />
-                        <h1 class = "pt-3"> <%= key %> </h1>
-                        <h2 class = "pt-3 fw-bold"> $<%= value["amount"] %> </h2>
+                        <h1 class = "pt-3 animate-text"> <%= category.name %> </h1>
+                        <h2 class = "pt-3 fw-bold animate-text"> $<%= category.budgets.sum(:amount) %> </h2>
                     </div>
                 <% end %>
             <% end %>

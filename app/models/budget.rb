@@ -4,5 +4,6 @@ class Budget < ApplicationRecord
                      format: { with: /\A\d+(?:\.\d{0,2})?\z/ }
 
   belongs_to :user, class_name: 'User', optional: true
+  has_many :category_budgets, dependent: :destroy
   has_many :categories, through: :category_budgets, dependent: :destroy
 end
