@@ -1,8 +1,8 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# BudgetOnRails
+# BudgetChecker
 
-> This is an educational project is about building a mobile web application where you can manage your budget: you have a list of transactions associated with a category, so that you can see how much money you spent and on what. The Ruby on Rails application that allows the user to:
+> This is a Ruby on Rails capstone project is about building a mobile web application where you can manage your budget: you have a list of transactions associated with a category, so that you can see how much money you spent and on what. The Ruby on Rails application that allows the user to:
 - [x] register and log in, so that the data is private to them.
 - [x] introduce new transactions associated with a category.
 - [x] see the money spent on each category.
