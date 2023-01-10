@@ -32,7 +32,7 @@ The result should look similar to the following data model:
 
 ## Project Documentation 📄
 
-- [x] Here is the presentation video [link]()👈
+- [x] Here is the presentation video [link](https://drive.google.com/file/d/1S0hSm0LV4o9xom-nobIpB8lvHr-u38ae/view?usp=sharing)👈
 - [x] Here is the deployed app in [Heroku](https://kwambiee-budget.herokuapp.com/)👈
 
 ## Built With 🛠️
